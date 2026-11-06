@@ -6,19 +6,49 @@ public class Classes {
         private String placa;
         private String modelo;
         private double diaria;
+
+        public void setVeiculo(String placa, String modelo, double diaria) {
+            this.placa = placa;
+            this.modelo = modelo;
+            this.diaria = diaria;
+        }
+
+        public String toString() {
+            return "Placa do carro: " + placa + ", modelo: " + modelo + ", diaria: " + diaria + ".";
+        }
     }
 
     public class Cliente {
 
         private String nome;
         private int idade;
+
+        public void setCliente(String nome, int idade) {
+            this.nome = nome;
+            this.idade = idade;
+        }
+
+        public String toString() {
+            return "Nome do cliente: " + nome + ", idade do cliente: " + idade + ".";
+        }
+
     }
 
     public class aluguel {
 
         private Veiculo veiculo;
         private Cliente cliente;
-        private int QtdDiarias;
+        private int qtdDiarias;
+
+        public void setAluguel(Veiculo veiculo, Cliente cliente, int qtdDiarias) {
+            this.veiculo = veiculo;
+            this.cliente = cliente;
+            this.qtdDiarias = qtdDiarias;
+        }
+
+        public String toString() {
+            return "Veiculos: " + veiculo + ", clientes: " + cliente + ", quantidade de diarias: " + qtdDiarias + ".";
+        }
     }
 //Recebe os metodos criadoss
 
