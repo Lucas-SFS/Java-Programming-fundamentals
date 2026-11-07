@@ -13,6 +13,18 @@ public class Classes {
             this.diaria = diaria;
         }
 
+        public String getPlaca() {
+            return placa;
+        }
+
+        public String getModelo() {
+            return modelo;
+        }
+
+        public double getDiaria() {
+            return diaria;
+        }
+
         public String toString() {
             return "Placa do carro: " + placa + ", modelo: " + modelo + ", diaria: " + diaria + ".";
         }
@@ -28,13 +40,21 @@ public class Classes {
             this.idade = idade;
         }
 
+        public String getNome() {
+            return nome;
+        }
+
+        public int getIdade() {
+            return idade;
+        }
+
         public String toString() {
             return "Nome do cliente: " + nome + ", idade do cliente: " + idade + ".";
         }
 
     }
 
-    public class aluguel {
+    public class Aluguel {
 
         private Veiculo veiculo;
         private Cliente cliente;
@@ -44,6 +64,18 @@ public class Classes {
             this.veiculo = veiculo;
             this.cliente = cliente;
             this.qtdDiarias = qtdDiarias;
+        }
+
+        public Veiculo getVeiculo() {
+            return veiculo;
+        }
+
+        public Cliente getCliente() {
+            return cliente;
+        }
+
+        public int getQtdDiarias() {
+            return qtdDiarias;
         }
 
         public String toString() {
