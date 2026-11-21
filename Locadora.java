@@ -34,7 +34,7 @@ public class Locadora {
 
     //1 buscarAluguelCliente: recebe o nome do cliente e retorna um vetor 
     //com todos os aluguéis que este cliente realizou;
-    public Aluguel[] buscarAluguelClient(String nomeCliente) {
+    public Aluguel[] buscarAluguelCliente(String nomeCliente) {
         int cont = 0, posicao = 0;
         for (int i = 0; i < qtdeAlugueis; i++) {
             if (alugueis[i].getCliente().getNome().equals(nomeCliente)) {
@@ -63,5 +63,17 @@ public class Locadora {
     }
 
     //3 buscarValorAlugueis: retorna o somatório do valor de todos os aluguéis da locadora;
+    public double buscarValorAlugueis() {
+        double valorTotal = 0;
+        for (int i = 0; i < qtdeAlugueis; i++) {
+            valorTotal += alugueis[i].getValor();
+        }
+        return valorTotal;
+    }
+
     //4 mostrarAlugueis: mostra os dados dos aluguéis da locadora
-}
+    public void mostrarAlugueis() {
+        for (int i = 0; i < qtdeAlugueis; i++) {
+            System.out.println(alugueis[i].toString());
+        }
+    }
