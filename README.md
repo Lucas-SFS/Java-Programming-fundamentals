@@ -10,7 +10,7 @@ Fundamentos de Programação TF – Trabalho Final
 # Profª 
 Adriana Scherer
 # Alunos:
-Lucas Samuel Fraga Santos, Caroline Oliveira Alves, 
+Lucas Samuel Fraga Santos, Caroline Oliveira Alves, Nina Laura dos Santos Monteiro
 
 Uma locadora de veículos contratou sua empresa de desenvolvimento de software para
 desenvolver o software que fará o gerenciamento das locações.
