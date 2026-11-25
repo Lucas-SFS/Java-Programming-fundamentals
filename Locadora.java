@@ -53,9 +53,9 @@ public class Locadora {
 
     //2 buscarPosicao: recebe o aluguel e retorna a posição do vetor em que este aluguel está
     //armazenado. Caso não esteja armazenado, retorna o valor -1;
-    public int buscarPosicao(Aluguel aluguel) {
+    public int buscarPosicao(Aluguel cliente) {
         for (int i = 0; i < qtdeAlugueis; i++) {
-            if (alugueis[i].equals(aluguel)) {
+            if (alugueis[i].equals(cliente)) {
                 return i;
             }
         }
@@ -66,14 +66,18 @@ public class Locadora {
     public double buscarValorAlugueis() {
         double valorTotal = 0;
         for (int i = 0; i < qtdeAlugueis; i++) {
-            valorTotal += alugueis[i].getValor();
+            valorTotal += alugueis[i].getVeiculo().getDiaria();
         }
         return valorTotal;
     }
 
     //4 mostrarAlugueis: mostra os dados dos aluguéis da locadora
     public void mostrarAlugueis() {
+        if (qtdeAlugueis == 0) {
+            System.out.println("Nenhum aluguel cadastrado. ");
+        }
         for (int i = 0; i < qtdeAlugueis; i++) {
             System.out.println(alugueis[i].toString());
         }
     }
+}
