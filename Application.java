@@ -16,6 +16,7 @@ public class Application {
             System.out.println("4. Buscar Posição de Aluguel");
             System.out.println("5. Buscar Valor Total de Aluguéis");
             System.out.println("6. Mostrar Todos os Aluguéis");
+            System.out.println("7. Relatorio de gastos por cliente");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opçao: ");
             opcao = scanner.nextInt();
@@ -98,6 +99,10 @@ public class Application {
                     break;
                 case 6:
                     locadora.mostrarAlugueis();
+                    break;
+                case 7;
+                    //relatorio de gastos por cliente
+                    locadora.mostrarRelatorioClientes();
                     break;
                 case 0:
                     System.out.println("Saindo...");
