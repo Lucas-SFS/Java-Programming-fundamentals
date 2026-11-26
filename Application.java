@@ -23,15 +23,9 @@ public class Application {
                 case "1":
                     System.out.println("Nome do cliente: ");
                     String nome = scanner.nextLine();
-
                     System.out.println("Idade do cliente: ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Digite apenas numeros inteiros para a idade: ");
-                        scanner.nextLine();
-                    }
                     int idade = scanner.nextInt();
                     scanner.nextLine();
-
                     Cliente cliente = new Cliente();
                     cliente.setCliente(nome, idade);
 
@@ -39,23 +33,12 @@ public class Application {
                     String placa = scanner.nextLine();
                     System.out.println("Modelo do veiculo: ");
                     String modelo = scanner.nextLine();
-
                     System.out.println("Valor da diaria: ");
-                    while (!scanner.hasNextDouble()) {
-                        System.out.println("Digite apenas numeros para a diaria: ");
-                        scanner.nextLine();
-                    }
                     double diaria = scanner.nextDouble();
-                    scanner.nextLine();
-
                     Veiculo veiculo = new Veiculo();
                     veiculo.setVeiculo(placa, modelo, diaria);
 
                     System.out.println("Quantidade de diarias: ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.println("Digite apenas numeros inteiros para as diarias: ");
-                        scanner.nextLine();
-                    }
                     int qtdDiarias = scanner.nextInt();
                     scanner.nextLine();
 
@@ -107,6 +90,7 @@ public class Application {
                     System.out.println("Opção inválida!");
             }
         } while (!opcao.equals("99"));
+
         scanner.close();
     }
 }
