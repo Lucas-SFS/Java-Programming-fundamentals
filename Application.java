@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Application {
@@ -6,29 +5,33 @@ public class Application {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Locadora locadora = new Locadora(100);
-        int opcao;
+        String opcao;
 
         do {
             System.out.println("Menu:");
-            System.out.println("1. Adicionar Aluguel");
-            System.out.println("2. Remover Aluguel");
-            System.out.println("3. Buscar Aluguel por Cliente");
-            System.out.println("4. Buscar Posição de Aluguel");
-            System.out.println("5. Buscar Valor Total de Aluguéis");
-            System.out.println("6. Mostrar Todos os Aluguéis");
-            System.out.println("7. Relatorio de gastos por cliente");
-            System.out.println("0. Sair");
+            System.out.println("1 - Adicionar aluguel");
+            System.out.println("2 - Remover aluguel");
+            System.out.println("3 - Mostrar alugueis de um cliente");
+            System.out.println("4 - Mostrar valor arrecado com os alugueis");
+            System.out.println("5 - Mostrar alugueis");
+            System.out.println("6 - Relatorio de clientes");
+            System.out.println("99 - Sair do programa");
             System.out.print("Escolha uma opçao: ");
-            opcao = scanner.nextInt();
-            scanner.nextLine(); // Consumir a quebra de linha
+            opcao = scanner.nextLine();
 
             switch (opcao) {
-                case 1:
-                    // Lógica para adicionar aluguel
+                case "1":
                     System.out.println("Nome do cliente: ");
                     String nome = scanner.nextLine();
+
                     System.out.println("Idade do cliente: ");
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Digite apenas numeros inteiros para a idade: ");
+                        scanner.nextLine();
+                    }
                     int idade = scanner.nextInt();
+                    scanner.nextLine();
+
                     Cliente cliente = new Cliente();
                     cliente.setCliente(nome, idade);
 
@@ -36,12 +39,23 @@ public class Application {
                     String placa = scanner.nextLine();
                     System.out.println("Modelo do veiculo: ");
                     String modelo = scanner.nextLine();
+
                     System.out.println("Valor da diaria: ");
+                    while (!scanner.hasNextDouble()) {
+                        System.out.println("Digite apenas numeros para a diaria: ");
+                        scanner.nextLine();
+                    }
                     double diaria = scanner.nextDouble();
+                    scanner.nextLine();
+
                     Veiculo veiculo = new Veiculo();
                     veiculo.setVeiculo(placa, modelo, diaria);
 
                     System.out.println("Quantidade de diarias: ");
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Digite apenas numeros inteiros para as diarias: ");
+                        scanner.nextLine();
+                    }
                     int qtdDiarias = scanner.nextInt();
                     scanner.nextLine();
 
@@ -54,8 +68,7 @@ public class Application {
                         System.out.println("Nao foi possivel adicionar aluguel.");
                     }
                     break;
-                case 2:
-                    // Lógica para remover aluguel
+                case "2":
                     System.out.println("Digite o nome do cliente que deseja remover: ");
                     String removeCliente = scanner.nextLine();
                     if (locadora.removerAluguel(removeCliente)) {
@@ -64,8 +77,7 @@ public class Application {
                         System.out.println("Nao foi possivel remover este cliente");
                     }
                     break;
-                case 3:
-                    // Lógica para buscar aluguel por cliente
+                case "3":
                     System.out.println("Digite o nome do cliente que deseja buscar os alugueis: ");
                     String buscaCliente = scanner.nextLine();
 
@@ -74,44 +86,27 @@ public class Application {
                         System.out.println("Esse cliente nao possui alugueis.");
                     } else {
                         for (int i = 0; i < clienteAlugueis.length; i++) {
-                            System.out.println(clienteAlugueis[i]);
+                            int pos = locadora.buscarPosicao(clienteAlugueis[i]);
+                            System.out.println("Posicao " + pos + ": " + clienteAlugueis[i]);
                         }
                     }
                     break;
-                case 4:
-                    // Lógica para buscar posição de aluguel
-                    System.out.println("Digite o nome do cliente que deseja encontrar os alugueis: ");
-                    String nomePosicao = scanner.nextLine();
-
-                    Aluguel[] alugueisPosicao = locadora.buscarAluguelCliente(nomePosicao);
-                    if (alugueisPosicao.length == 0) {
-                        System.out.println("Esse cliente nao possui alugueis.");
-                    } else {
-                        for (int i = 0; i < alugueisPosicao.length; i++) {
-                            int pos = locadora.buscarPosicao(alugueisPosicao[i]);
-                            System.out.println("Posicao " + pos + ": " + alugueisPosicao[i]);
-                        }
-                    }
-                    break;
-                case 5:
-                    // Lógica para buscar valor total de aluguéis
+                case "4":
                     System.out.println("O valor arrecadado foi: " + locadora.buscarValorAlugueis());
                     break;
-                case 6:
+                case "5":
                     locadora.mostrarAlugueis();
                     break;
-                case 7;
-                    //relatorio de gastos por cliente
+                case "6":
                     locadora.mostrarRelatorioClientes();
                     break;
-                case 0:
+                case "99":
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida!");
             }
-        } while (opcao != 0);
-
+        } while (!opcao.equals("99"));
         scanner.close();
     }
 }

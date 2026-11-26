@@ -1,4 +1,3 @@
-
 public class Locadora {
 
     private Aluguel[] alugueis;
@@ -20,7 +19,7 @@ public class Locadora {
 
     public boolean removerAluguel(String nomeCliente) {
         for (int i = 0; i < qtdeAlugueis; i++) {
-            if (alugueis[i].getCliente().getNome().equals(nomeCliente)) {
+            if (alugueis[i].getCliente().getNome().equalsIgnoreCase(nomeCliente)) {
                 for (int j = i; j < qtdeAlugueis - 1; j++) {
                     alugueis[j] = alugueis[j + 1];
                 }
@@ -32,18 +31,16 @@ public class Locadora {
         return false;
     }
 
-    //1 buscarAluguelCliente: recebe o nome do cliente e retorna um vetor 
-    //com todos os aluguéis que este cliente realizou;
     public Aluguel[] buscarAluguelCliente(String nomeCliente) {
         int cont = 0, posicao = 0;
         for (int i = 0; i < qtdeAlugueis; i++) {
-            if (alugueis[i].getCliente().getNome().equals(nomeCliente)) {
+            if (alugueis[i].getCliente().getNome().equalsIgnoreCase(nomeCliente)) {
                 cont++;
             }
         }
         Aluguel[] alugueisClientes = new Aluguel[cont];
         for (int i = 0; i < qtdeAlugueis; i++) {
-            if (alugueis[i].getCliente().getNome().equals(nomeCliente)) {
+            if (alugueis[i].getCliente().getNome().equalsIgnoreCase(nomeCliente)) {
                 alugueisClientes[posicao] = alugueis[i];
                 posicao++;
             }
@@ -51,27 +48,23 @@ public class Locadora {
         return alugueisClientes;
     }
 
-    //2 buscarPosicao: recebe o aluguel e retorna a posição do vetor em que este aluguel está
-    //armazenado. Caso não esteja armazenado, retorna o valor -1;
-    public int buscarPosicao(Aluguel cliente) {
+    public int buscarPosicao(Aluguel aluguel) {
         for (int i = 0; i < qtdeAlugueis; i++) {
-            if (alugueis[i].equals(cliente)) {
+            if (alugueis[i].equals(aluguel)) {
                 return i;
             }
         }
         return -1;
     }
 
-    //3 buscarValorAlugueis: retorna o somatório do valor de todos os aluguéis da locadora;
     public double buscarValorAlugueis() {
         double valorTotal = 0;
         for (int i = 0; i < qtdeAlugueis; i++) {
-            valorTotal += alugueis[i].getVeiculo().getDiaria();
+            valorTotal += alugueis[i].getVeiculo().getDiaria() * alugueis[i].getQtdDiarias();
         }
         return valorTotal;
     }
 
-    //4 mostrarAlugueis: mostra os dados dos aluguéis da locadora
     public void mostrarAlugueis() {
         if (qtdeAlugueis == 0) {
             System.out.println("Nenhum aluguel cadastrado. ");
@@ -79,5 +72,49 @@ public class Locadora {
         for (int i = 0; i < qtdeAlugueis; i++) {
             System.out.println(alugueis[i].toString());
         }
+    }
+    
+    public void mostrarRelatorioClientes() {
+        if (qtdeAlugueis == 0) {
+            System.out.println("Nenhum aluguel cadastrado.");
+            return;
+        }
+        String[] nomes = new String[qtdeAlugueis];
+        double[] totais = new double[qtdeAlugueis];
+        int[] qtdAlugueis = new int[qtdeAlugueis];
+        int qtdClientes = 0;
+        for (int i = 0; i < qtdeAlugueis; i++) {
+            String nome = alugueis[i].getCliente().getNome();
+            double valor = alugueis[i].getVeiculo().getDiaria() * alugueis[i].getQtdDiarias();
+            int pos = -1;
+            for (int j = 0; j < qtdClientes; j++) {
+                if (nomes[j].equalsIgnoreCase(nome)) {
+                    pos = j;
+                    break; 
+                }
+            }
+            if (pos == -1) {
+                nomes[qtdClientes] = nome;
+                totais[qtdClientes] = valor;
+                qtdAlugueis[qtdClientes] = 1;
+                qtdClientes++;
+            } else {
+                totais[pos] += valor;
+                qtdAlugueis[pos]++;
+            }
+        }
+        System.out.println("\n===== RELATORIO DE CLIENTES =====");
+        int indiceMaior = 0;
+
+        for (int i = 0; i < qtdClientes; i++) {
+            System.out.println((i + 1) + ") " + nomes[i] + " | " + qtdAlugueis[i]
+                    + " aluguel(eis) | Total gasto: R$ " + totais[i]);
+            if (totais[i] > totais[indiceMaior]) {
+                indiceMaior = i;
+            }
+        }
+        System.out.println("---------------------------------");
+        System.out.println("Cliente que mais gastou: " + nomes[indiceMaior]
+            + " (R$ " + totais[indiceMaior] + ")");
     }
 }

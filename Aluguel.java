@@ -1,4 +1,3 @@
-
 public class Aluguel {
 
     private Veiculo veiculo;
@@ -10,7 +9,7 @@ public class Aluguel {
         this.cliente = cliente;
         this.qtdDiarias = qtdDiarias;
     }
-
+    
     public Veiculo getVeiculo() {
         return veiculo;
     }

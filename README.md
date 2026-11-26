@@ -1,63 +1,85 @@
-# JAVA-Programming-fundamentals
-Programming fundamentals final project | First semester at Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS university).
+------------------------------------------------------------------------
 
-# Curso: 
-Ciência da Computação
-# Disciplina: 
-Fundamentos de Programação TF – Trabalho Final
-# Turma: 
-130
-# Profª 
-Adriana Scherer
-# Alunos:
-Lucas Samuel Fraga Santos, Caroline Oliveira Alves, Nina Laura dos Santos Monteiro
+PROJETO: Sistema de Gerenciamento de Locadora de Veículos
 
-Uma locadora de veículos contratou sua empresa de desenvolvimento de software para
-desenvolver o software que fará o gerenciamento das locações.
+DISCIPLINA: Fundamentos de Programação (Turma 130)
 
-Para tanto, criar uma classe chamada Veículo que terá os seguintes atributos: placa (String), modelo (String) e valor diária (double). Crie os métodos básicos para a classe.
- Criar, também, uma classe Cliente que terá os seguintes atributos: nome (String) e idade (int).  Crie os métodos básicos para a classe.
+PROFESSORA: Adriana Scherer
 
-   O Aluguel será uma classe que terá os seguintes atributos: veiculo (Veiculo), cliente (Cliente) e quantidade de diárias (int). Crie os métodos básicos para a classe.
+INSTITUIÇÃO: PUCRS - Escola Politécnica (Ciência da Computação, Ciencia de Dados e Inteligencia Artificial)
 
-O gerenciamento dos aluguéis deve ser feito na classe Locadora que também deve ser criada. Nesta classe, serão armazenados os aluguéis dos veículos feitos pelos clientes da locadora. Crie um construtor que recebe a quantidade de aluguéis que a locadora irá gerenciar e cria o vetor de aluguéis – você define quantos aluguéis serão gereciados. Além do construtor, esta classe deve ter os seguintes métodos:
+------------------------------------------------------------------------
 
-A. adicionarAluguel: insere um objeto aluguel no vetor da locadora e para isto, recebe o objeto aluguel e retorna true se a inserção pode ser realizada ou false se a inserção não foi possível;
 
-B. removerAluguel: recebe o nome do cliente e, caso ele tenha um aluguel realizado, o remove do vetor de aluguéis, reorganiza os objetos e retorna true se a remoção foi realizada com sucesso ou false se a remoção não foi possível;
 
-C. buscarAluguelCliente: recebe o nome do cliente e retorna um vetor com todos os aluguéis que este cliente realizou;
+1. AUTORES DO TRABALHO
 
-D. buscarPosicao: recebe o aluguel e retorna a posição do vetor em que este aluguel está
-armazenado. Caso não esteja armazenado, retorna o valor -1;
+- Nome completo: Caroline Oliveira Alves | Matrícula: 26201639
 
-E. buscarValorAlugueis: retorna o somatório do valor de todos os aluguéis da locadora;
+- Nome completo: [Preencher Nome 2] | Matrícula: [Preencher Matrícula 2]
 
-F. mostrarAlugueis: mostra os dados dos aluguéis da locadora.
+- Nome completo: [Preencher Nome 3 - se houver] | Matrícula: [Preencher Matrícula 3]
 
-Crie uma classe Application que deverá ter o método main com as seguintes funcionalidades que deverão acionar o(s) métodos adequados para a realização da operação escolhida.
-1 – Adicionar aluguel
-2 – Remover aluguel
-3 – Mostrar aluguéis de um cliente
 
-Curso: Ciência da Computação
-Disciplina: Fundamentos de Programação TF – Trabalho Final
-Turma: 130
-Alunos: Profª Adriana Scherer
-4 – Mostrar valor arrecado com os aluguéis
-5 – Mostrar aluguéis
-6 – VOCÊ DEFINE E IMPLEMENTA ESTA FUNCIONALIDADE
-99 – Sair do programa
-Considerações gerais:
-1) Seu programa deve executar enquanto a opção de saída (opção 99) não for informada.
-2) As opções 1 e 2 (Adicionar/Remover aluguel da locadora) deve mostrar mensagem informando
-se a inserção/remoção foi feita com sucesso ou se a inserção/remoção não pode ser efetuada.
-3) A opção 2 (Remover aluguel da locadora) remove sempre o primeiro aluguel encontrado, caso
-exista;
-4) As opções 3 e 4 mostram as consultas, conforme a funcionalidade, caso o critério de busca não
-exista (para a opção 3), mostrar mensagem adequada.
-5) A opção 6 deve chamar e executar corretamente a funcionalidade que o grupo implementou.
-Tenham em mente que a professora não irá abrir o código para entender, portanto, a
-usabilidade deve ser levada em consideração. Para esta implementação, não utilizem as
-funcionalidades já implementadas nos itens de 1 a 5 do menu. Aproveitem para criar soluções
-criativas para este cenário!
+
+2. LINK DO VÍDEO PITCH (YOUTUBE - NÃO LISTADO)
+
+- URL: [Colar aqui o link do vídeo no YouTube configurado como Não Listado]
+
+
+
+3. DESCRIÇÃO GERAL E FUNCIONALIDADE EXTRA (OPÇÃO 6)
+
+O sistema gerencia locações de veículos utilizando orientação a objetos em Java (classes Veiculo, Cliente, Aluguel, Locadora e Application), armazenando os registros em um vetor estático na classe Locadora.
+
+
+
+Funcionalidade Extra Implementada (Opção 6 - Relatório de Clientes):
+
+Para atender ao requisito de inovação sem reutilizar os métodos das opções 1 a 5, criamos o método mostrarRelatorioClientes(). Ele percorre os aluguéis ativos, agrupa os registros por cliente (ignorando diferenças entre maiúsculas e minúsculas), contabiliza a quantidade de locações e o valor total gasto por cada um, e destaca ao final o cliente que gerou maior faturamento para a locadora.
+
+
+
+4. FONTES DE CONSULTA E AJUDA UTILIZADAS
+
+- Material de aula e slides da disciplina de Fundamentos de Programação, para estruturação de classes, getters/setters e manipulação de vetores de objetos.
+
+- Monitoria / Colegas / Familiares: Não houve consulta a terceiros além do material da disciplina e da ferramenta de IA descrita abaixo.
+
+
+
+5. USO DE INTELIGÊNCIA ARTIFICIAL (IA)
+
+- Ferramenta utilizada: Google Gemini (https://gemini.google.com/)
+
+- Justificativa do uso: A IA foi utilizada como ferramenta de revisão de código, depuração de erros de lógica/compilação e validação dos requisitos do enunciado após o desenvolvimento inicial da estrutura feita pelo grupo. O recurso auxiliou na identificação de falhas de leitura no buffer do teclado (Scanner), na validação de entradas inválidas sem interromper a execução do programa e no alinhamento do menu às especificações do trabalho.
+
+
+
+- Sequência de prompts e evolução/refinos realizados:
+
+  1) Prompt inicial: Envio da classe Aluguel solicitando revisão para o Trabalho Final.
+
+     -> Refino: Verificação da estrutura de atributos e métodos básicos (getters, setters e toString).
+
+  2) Segundo prompt: Envio de todas as classes criadas pelo grupo (Aluguel, Cliente, Veiculo, Locadora e Application) junto com o PDF do enunciado para verificação geral.
+
+     -> Refino: Identificação de erro de compilação no método mostrarRelatorioClientes() (chamada de getValorDiaria() em vez de getDiaria()), correção do cálculo do valor total em buscarValorAlugueis() (multiplicando o valor da diária pela quantidade de diárias), inserção de scanner.nextLine() para evitar o salto de leitura da placa após ler a idade, e ajuste da numeração do menu (opções 1 a 6 e 99 para sair).
+
+
+
+6. DIFICULDADES ENCONTRADAS E COMO FORAM SUPERADAS
+
+- Manipulação e reorganização de vetores de objetos: Ao remover um aluguel no meio do vetor (método removerAluguel), foi necessário deslocar todos os elementos subsequentes uma posição para trás e anular a última posição para evitar buracos ou referências duplicadas. Superamos esse desafio desenhando os índices no papel antes de implementar o laço for aninhado.
+
+- Agrupamento de dados sem coleções avançadas: Na funcionalidade extra (opção 6), precisávamos agrupar gastos por cliente utilizando apenas arrays tradicionais. Resolvemos criando vetores auxiliares paralelos (nomes, totais e quantidades) controlados por um contador de clientes únicos.
+
+- Problemas de buffer e entradas inválidas no Scanner: Ao misturar nextInt() com nextLine(), o programa pulava campos de texto ou travava se o usuário digitasse letras em campos numéricos. Superamos limpando o buffer após leituras numéricas e validando o tipo de entrada com hasNextInt() e hasNextDouble().
+
+
+
+7. LIÇÕES APRENDIDAS
+
+- Importância da modularização e encapsulamento: Separar as responsabilidades entre as classes de modelo (Cliente, Veiculo, Aluguel), a classe gerenciadora (Locadora) e a interface com o usuário (Application) tornou o código muito mais fácil de testar e corrigir.
+
+- Pensar na usabilidade e na prevenção de erros do usuário: Aprendemos que não basta o código funcionar apenas com entradas perfeitas; validar o que o usuário digita e exibir mensagens claras é essencial para entregar um software confiável.
