@@ -18,14 +18,13 @@ INSTITUIÇÃO: PUCRS - Escola Politécnica (Ciência da Computação, Ciencia de
 
 - Nome completo: Nina Laura dos Santos Monteiro | Matrícula: 25101316
 
-- Nome completo: [Preencher Nome 3 - se houver] | Matrícula: [Preencher Matrícula 3]
+- Nome completo: Lucas Samuel Fraga Santos | Matrícula: 26204063
 
 
 
 2. LINK DO VÍDEO PITCH (YOUTUBE - NÃO LISTADO)
 
-- URL: [Colar aqui o link do vídeo no YouTube configurado como Não Listado]
-
+- URL: https://youtu.be/FZDtv5GGGNo
 
 
 3. DESCRIÇÃO GERAL E FUNCIONALIDADE EXTRA (OPÇÃO 6)
