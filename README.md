@@ -16,7 +16,7 @@ INSTITUIÇÃO: PUCRS - Escola Politécnica (Ciência da Computação, Ciencia de
 
 - Nome completo: Caroline Oliveira Alves | Matrícula: 26201639
 
-- Nome completo: [Preencher Nome 2] | Matrícula: [Preencher Matrícula 2]
+- Nome completo: Nina Laura dos Santos Monteiro | Matrícula: 25101316
 
 - Nome completo: [Preencher Nome 3 - se houver] | Matrícula: [Preencher Matrícula 3]
 
