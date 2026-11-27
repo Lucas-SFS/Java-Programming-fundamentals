@@ -24,7 +24,7 @@ INSTITUIÇÃO: PUCRS - Escola Politécnica (Ciência da Computação, Ciencia de
 
 2. LINK DO VÍDEO PITCH (YOUTUBE - NÃO LISTADO)
 
-- URL: https://youtu.be/FZDtv5GGGNo
+- URL: https://youtu.be/R-p1T-QOSmA
 
 
 3. DESCRIÇÃO GERAL E FUNCIONALIDADE EXTRA (OPÇÃO 6)
